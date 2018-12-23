@@ -16,8 +16,16 @@ export class MyFormComponent implements OnInit {
   }
 
   addNewItem() {
-    this.myActivity.push(this.draft);
-    this.draft = '';
+    if (this.draft !== '') {
+      this.myActivity.push(this.draft);
+      this.draft = '';
+    }
+  }
+
+  addNewItemByHitEnter(event) {
+    if (event.key === 'Enter') {
+      this.addNewItem();
+    }
   }
 
   deleteItem(event: Event) {

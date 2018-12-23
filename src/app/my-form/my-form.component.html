@@ -1,8 +1,10 @@
 <div>
   <small class="text-dark">Type your activity:</small>
   <input type="text" class="form-control" placeholder="Example: Do Programming Exercises!" style="margin-top: 5px;"
-         [(ngModel)]="draft">
-  <button class="btn btn-primary" style="margin-top: 20px" (click)="addNewItem()">Add item</button>
+         [(ngModel)]="draft" (keydown)="addNewItemByHitEnter($event)">
+  <button class="btn btn-primary" style="margin-top: 20px" (click)="addNewItem()" type="button"
+  >Add item
+  </button>
 </div>
 <hr>
 <div *ngFor="let act of myActivity; let i = index" style="user-select: none" class="bg-dark rounded-left">
