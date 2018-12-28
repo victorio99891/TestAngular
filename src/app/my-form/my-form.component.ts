@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivityModel} from './activity.model';
 
 @Component({
   selector: 'app-my-form',
@@ -7,7 +8,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MyFormComponent implements OnInit {
 
-  myActivity: Array<string> = ['Wash hands', 'Run about 10 kilometers'];
+
+  myActivity: Array<ActivityModel> = [
+    new ActivityModel(new Date(), 'Wash your hands!'),
+    new ActivityModel(new Date(), 'Run about 10 kilometers!')];
 
   draft: string;
 
@@ -17,7 +21,10 @@ export class MyFormComponent implements OnInit {
 
   addNewItem() {
     if (this.draft !== '') {
-      this.myActivity.push(this.draft);
+      this.myActivity.push({
+        creationDate: new Date(),
+        content: this.draft
+      });
       this.draft = '';
     }
   }
@@ -28,12 +35,9 @@ export class MyFormComponent implements OnInit {
     }
   }
 
-  deleteItem(event: Event) {
-    var index = (<HTMLInputElement>event.target).value;
-    console.log(index);
-    this.myActivity.splice(parseInt(index), 1);
+  deleteItem(element) {
+    this.myActivity.splice(parseInt(element), 1);
   }
-
 
   ngOnInit() {
   }

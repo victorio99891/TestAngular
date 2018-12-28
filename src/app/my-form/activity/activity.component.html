@@ -1,0 +1,10 @@
+<div
+  style="height: 30px; margin: 10px 10px 10px 10px; padding-left: 20px; padding-top: 3px;"
+  (click)="toggleDone()" [ngClass]="isActivityDone ? 'doneClass' : 'undoneClass'">
+  {{activity.creationDate | date: 'HH : mm : ss'}} - {{activity.content}}
+  <button class="float-right" style="margin-top: -3px; margin-right: -10px; background-color: red; color: white"
+          value="{{index}}"
+          (click)="deleteItem()">
+    Delete
+  </button>
+</div>

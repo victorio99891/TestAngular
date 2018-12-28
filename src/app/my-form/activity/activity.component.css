@@ -1,0 +1,10 @@
+.doneClass {
+  text-decoration: line-through;
+  color: red;
+}
+
+.undoneClass {
+   color: white;
+}
+
+

@@ -6,13 +6,15 @@ import { ClockComponent } from './clock/clock.component';
 import { DateComponent } from './date/date.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import {FormsModule} from '@angular/forms';
+import { ActivityComponent } from './my-form/activity/activity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClockComponent,
     DateComponent,
-    MyFormComponent
+    MyFormComponent,
+    ActivityComponent
   ],
   imports: [
     BrowserModule,

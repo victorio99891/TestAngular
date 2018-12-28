@@ -8,12 +8,6 @@
 </div>
 <hr>
 <div *ngFor="let act of myActivity; let i = index" style="user-select: none" class="bg-dark rounded-left">
-  <div
-    style="height: 30px; margin: 10px 10px 10px 10px; padding-left: 20px; padding-top: 3px; color: #ffffff;">
-    {{act}}
-    <button class="float-right" style="margin-top: -3px; margin-right: -10px; background-color: red; color: white"
-            value="{{i}}" (click)="deleteItem($event)">Delete
-    </button>
-  </div>
+  <app-activity [myIndex]="i" [myActivity]="act" (myOutputIndex)="deleteItem($event)"></app-activity>
 </div>
 
